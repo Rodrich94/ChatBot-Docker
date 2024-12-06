@@ -45,3 +45,20 @@ Si aún no lo has hecho, clona este repositorio en tu máquina local:
 ```bash
 git clone <URL_DEL_REPOSITORIO>
 cd <NOMBRE_DEL_REPOSITORIO>
+```
+# Guía para Construir y Ejecutar la Aplicación con Docker y Docker Compose
+
+Este proyecto consta de dos partes principales: un **frontend** (React) y un **backend** (Flask). A continuación, te mostraré cómo construir y ejecutar ambos contenedores utilizando Docker y Docker Compose.
+
+## Comandos para Docker
+
+### 1. **Construir la Imagen y Etiquetarla**
+
+#### Construir una imagen desde un Dockerfile
+
+Para construir una imagen Docker a partir del archivo `Dockerfile` en el directorio actual:
+
+```bash
+docker build -t nombre-imagen .
+```
+
