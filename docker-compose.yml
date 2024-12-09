@@ -1,0 +1,21 @@
+services:
+
+  backend:
+    image: chat-api
+    build:
+      context: ./python-chat-api  # Directorio donde se encuentra el Dockerfile de Flask de mi api del chat
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"  # Mapea el puerto 5000 del contenedor al puerto 5000 de mi pc local
+    environment:
+      - FLASK_APP=run.py  # Define la variable de entorno FLASK_APP
+
+  frontend: # mi front de react
+    image: chat-frontend
+    build:
+      context: ./react-chat-app  # Directorio donde se encuentra el Dockerfile de React
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"  # Mapea el puerto 8080 del contenedor al puerto 80 de mi pc
+    depends_on:
+      - backend  # Espera que el backend esté listo
